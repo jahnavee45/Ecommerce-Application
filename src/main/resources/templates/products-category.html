@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Ecommerce - Product Category</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{/css/styles.css}"/>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <div class="container-fluid">
+        <a class="navbar-brand text-white" href="#">E-commerce</a>
+        <div class="collapse navbar-collapse justify-content-end">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a th:href="@{/cart}" class="nav-link link-light">Cart</a>
+                </li>
+                <li class="nav-item">
+                    <a th:href="@{/logout}" class="nav-link link-light">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+    <div class="container mt-4">
+        <div class="text-center">
+            <h1>Products Category</h1>
+        </div>
+        <div class="row">
+            <div th:each="category:${items_category}" class="col-md-4 mb-4">
+                <div class="card">
+                    <a th:href="@{/products-category/{id}(id=${category.id})}" class="text-decoration-none">
+                    <div class="card-header bg-light" th:text="${category.Category}"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</html>

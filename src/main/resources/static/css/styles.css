@@ -1,0 +1,25 @@
+/* Custom styles for nav links */
+        .nav-link {
+            color: black;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            text-decoration: none;
+        }
+        .qty-box {
+            display: flex;
+        }
+        .qty-box button {
+            width: 30px;
+            height: 30px;
+        }
+        .qty-box input {
+            width: 50px;
+            text-align: center;
+            margin: 0 10px; /* Add margin for spacing */
+        }

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ecommerce - Products</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" th:href="@{/css/styles.css}"/>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand text-white" href="#">E-commerce</a>
+    <div class="collapse navbar-collapse justify-content-end">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a th:href="@{/products-category}" class="nav-link link-light">Home</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container mt-5">
+  <h2>Cart Items</h2>
+  <div th:if="${itemsList.isEmpty()}">
+    <p>Your cart is empty.</p>
+  </div>
+  <div th:unless="${itemsList.isEmpty()}">
+    <table class="table table-striped table-bordered">
+      <thead>
+      <tr>
+        <th>Item</th>
+<!--        <th>Quantity</th>-->
+        <th>Price(in USD)</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="item : ${itemsList}">
+        <td th:text="${item.itemsName}">Item Name</td>
+<!--        <td th:text="${item.quantity}">Quantity</td>-->
+        <td th:text="${item.price}">Item Price</td>
+      </tr>
+      <tr class="table-secondary">
+        <td colspan="1"><b>Total:</b></td>
+        <td th:text="${totalPrice}"><b>Total Price</b></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <form th:action="@{/cart/checkout}" method="post">
+    <button type="submit" class="btn btn-primary mt-2">Checkout</button>
+  </form>
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</html>
