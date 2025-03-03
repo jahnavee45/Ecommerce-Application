@@ -9,7 +9,7 @@
     - REST APIs
     - Thymeleaf
 3. Screenshots
-   - ![](./images/ecom-1.png)
-   - ![](./images/ecom-2.png)
-   - ![](./images/ecom-3.png)
-   - ![](./images/ecom-4.png)
+![](./images/ecom-1.png)
+![](./images/ecom-2.png)
+![](./images/ecom-3.png)
+![](./images/ecom-4.png)
