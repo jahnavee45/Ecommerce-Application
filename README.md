@@ -8,3 +8,5 @@
     - MySQL
     - REST APIs
     - Thymeleaf
+3. Screenshots
+   - ![](\src\main\resources\static\images)
